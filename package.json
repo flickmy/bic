@@ -1,0 +1,133 @@
+{
+  "name": "@flickmy/bic",
+  "description": "Bic",
+  "version": "0.0.0-1",
+  "author": {
+    "name": "Ray Patterson",
+    "email": "github.raypatterson@gmail.com"
+  },
+  "bin": {
+    "bic": "./bin/bic.js"
+  },
+  "bugs": "https://github.com/flickmy/bic/issues",
+  "contributors": [
+    {
+      "name": "Ray Patterson",
+      "email": "github.raypatterson@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "@flickmy/bic-logger": "file:../bic-logger",
+    "app-root-path": "^1.0.0",
+    "autoprefixer-loader": "^3.1.0",
+    "bower-webpack-plugin": "^0.1.8",
+    "browser-sync": "^2.8.0",
+    "commander": "^2.8.1",
+    "concurrent-transform": "^1.0.0",
+    "css-loader": "^0.18.0",
+    "csso": "^1.3.11",
+    "del": "^2.0.1",
+    "dotenv": "^1.2.0",
+    "executive": "^0.5.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "favicons": "^3.1.3",
+    "file-loader": "^0.8.4",
+    "fs-extra": "^0.24.0",
+    "globby": "^3.0.1",
+    "gulp": "^3.9.0",
+    "gulp-awspublish": "^3.0.0",
+    "gulp-cloudfront": "0.0.14",
+    "gulp-colorguard": "^1.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-csscomb": "^3.0.6",
+    "gulp-csslint": "^0.2.0",
+    "gulp-csso": "^1.0.0",
+    "gulp-debug": "^2.0.1",
+    "gulp-filter": "^3.0.1",
+    "gulp-foreach": "^0.1.0",
+    "gulp-gzip": "^1.2.0",
+    "gulp-htmlhint": "^0.3.0",
+    "gulp-htmlmin": "^1.1.3",
+    "gulp-ignore": "^1.2.1",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-invalidate-cloudfront": "^0.1.2",
+    "gulp-jscs": "^2.0.0",
+    "gulp-jscs-custom": "^0.1.6",
+    "gulp-jshint": "^1.11.2",
+    "gulp-json-lint": "^0.1.0",
+    "gulp-jsonmin": "^1.0.2",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "gulp-modernizr": "^1.0.0-alpha",
+    "gulp-modify-css-urls": "^0.2.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-pipemin": "^2.2.3",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.3",
+    "gulp-rev-all": "^0.8.21",
+    "gulp-rev-napkin": "^0.1.0",
+    "gulp-sequence": "^0.4.0",
+    "gulp-svg-sprite": "^1.2.6",
+    "gulp-tap": "^0.1.3",
+    "gulp-todo": "^3.1.1",
+    "gulp-uglify": "^1.2.0",
+    "gulp-uncss": "^1.0.2",
+    "gulp-util": "^3.0.6",
+    "html-minifier": "^0.7.2",
+    "html-webpack-plugin": "^1.6.0",
+    "jade": "^1.11.0",
+    "jscs-stylish": "^0.3.1",
+    "jshint-stylish": "^2.0.1",
+    "lodash": "^3.10.0",
+    "modernizr": "^3.0.0-alpha.4",
+    "nconf": "^0.7.1",
+    "node-cipher": "^2.4.8",
+    "node-sass": "^3.3.2",
+    "nodemon": "^1.3.8",
+    "rekuire": "^0.1.9",
+    "s3": "^4.4.0",
+    "sass-loader": "^2.0.1",
+    "style-loader": "^0.12.3",
+    "traverse": "^0.6.6",
+    "uglify-js": "^2.4.24",
+    "url-loader": "^0.5.6",
+    "vinyl": "^0.5.0",
+    "webpack": "^1.10.5",
+    "yargs": "^3.15.0"
+  },
+  "devDependencies": {
+    "blue-tape": "^0.1.10",
+    "bump-cli": "^1.1.3",
+    "faucet": "0.0.1",
+    "fixpack": "^2.2.0"
+  },
+  "directories": {},
+  "engines": {
+    "node": "0.12.7",
+    "npm": "2.12.1"
+  },
+  "homepage": "https://github.com/nuruncode/bic#readme",
+  "keywords": [
+    "bic",
+    "website",
+    "framework"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "raypatterson",
+      "email": "github.raypatterson@gmail.com"
+    }
+  ],
+  "repository": "github:flickmy/bic",
+  "scripts": {
+    "commit:pre": "git add -A && git commit -m 'Prerelease' && git push",
+    "publish:pre": "npm publish --access=public",
+    "release:major": "fixpack && bump .package.json --major",
+    "release:minor": "fixpack && bump .package.json --minor",
+    "release:patch": "fixpack && bump .package.json --patch",
+    "release:pre": "fixpack && bump .package.json --pre && npm run commit:pre && npm run publish:pre",
+    "test": "faucet"
+  }
+}
