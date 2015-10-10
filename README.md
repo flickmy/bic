@@ -1,14 +1,14 @@
 # Bic
 
-It's a...
+## It's a
 
--  framework to build websites
-- thin wrapper around a bunch of Gulp tasks, a big bunch defaults configurations and webpack
-- work in progress
+- Framework to build websites
+- Thin wrapper around Gulp tasks, defaults configurations and webpack
+- Work in progress
 
-Still reading...
+> Still reading?
 
-Supported features are...
+## Supported features are
 
 - CLI, env & project specific defaults and overrides config using [nconf](https://github.com/indexzero/nconf)
 - Build task sequencing using [gulp](https://github.com/gulpjs) & [gulp-sequence](https://github.com/teambition/gulp-sequence)
@@ -29,22 +29,27 @@ Supported features are...
 - Convert root relative paths to relative for deployment to sub-directories
 - Automatic generation of project TODO/FIXME list
 
-Supported demo features are...
+## Supported demo features are
 
 - Package formatting using [fixpack](https://github.com/henrikjoreteg/fixpack)
 - Package versioning using [bump-cli](https://github.com/rstacruz/bump-cli)
 - Async unit testing using [blue-tape](https://github.com/spion/blue-tape)
 
-Future supported features may be...
+## Future supported features may be
 
-- Deep add & override configs (E.g. add loaders to webpack)
 - Project boilerplate generators Yeoman & Slush
-- Browser unit test running support using
-- Unit testing using Jasmine / Mocha, Chai, Sinon
+- Deep add & override configs (E.g. add loaders to webpack)
+- Sitespeed performance budget reports
+- JS & CSS complexity reports
+- Accessibility report
+- Visual regression testing using Ghost Inspector  
+- Unit testing using Jasmine / Mocha, Chai & Sinon
 - Test running with webpack support using Karma
 - Test coverage reporting using Istambul
 - Release management using [ghooks](https://github.com/gtramontina/ghooks), [semantic-release](https://github.com/semantic-release/semantic-release), [commitizen](https://github.com/commitizen), [greenkeeper](http://greenkeeper.io/), etc.
+- IE8+ support, CSS Bless
 
-Things that won't happen are...
+
+## Things that won't happen are
 
 - More template engine support - The demo uses Jade. JSX is another option.
