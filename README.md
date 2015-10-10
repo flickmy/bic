@@ -25,9 +25,9 @@
 - Gzip compression
 - Favicon generation
 - Deployment to AWS S3 + CloudFront
-- Asset fingerprinting/versioning for browser cache busting
+- Asset filename versioning (for browser cache busting)
 - Convert root relative paths to relative for deployment to sub-directories
-- Automatic generation of project TODO/FIXME list
+- Document project TODO/FIXME list
 
 ## Supported demo features are
 
@@ -39,6 +39,7 @@
 
 - Project boilerplate generators Yeoman & Slush
 - Deep add & override configs (E.g. add loaders to webpack)
+- JS & CSS documentation generation
 - Sitespeed performance budget reports
 - JS & CSS complexity reports
 - Accessibility report
