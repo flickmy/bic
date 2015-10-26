@@ -20,8 +20,8 @@ module.exports = function(id, cfg) {
       .pipe(cfg.$.ignore(taskConfig.ignore))
       .pipe(cfg.$.revNapkin())
       .pipe(rev.manifestFile())
-      .pipe(cfg.gulp.dest(cfg.dir.root))
+      .pipe(cfg.gulp.dest(cfg.dir.projectRoot))
       .pipe(rev.versionFile())
-      .pipe(cfg.gulp.dest(cfg.dir.root));
+      .pipe(cfg.gulp.dest(cfg.dir.projectRoot));
   });
 };

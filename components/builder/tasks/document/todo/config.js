@@ -4,7 +4,7 @@ var path = require('path');
 var cfg = require('nconf').get();
 
 module.exports = {
-  cwd: cfg.dir.root,
+  cwd: cfg.dir.projectRoot,
   src: [
     cfg.patterns.js,
     cfg.patterns.sass,
@@ -13,7 +13,7 @@ module.exports = {
     cfg.patterns.ignore(path.join('**', cfg.packages.node, '**')),
     cfg.patterns.ignore(path.join('**', cfg.packages.bower, '**'))
   ],
-  dest: cfg.dir.root,
+  dest: cfg.dir.projectRoot,
   options: {
     verbose: true
   }

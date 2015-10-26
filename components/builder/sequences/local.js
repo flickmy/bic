@@ -3,7 +3,6 @@
 module.exports = [
   'sequences/build', [
     'tasks/serve/nodemon',
-    'tasks/serve/browsersync',
-    'tasks/document/todo'
+    'tasks/serve/browsersync'
   ]
 ];

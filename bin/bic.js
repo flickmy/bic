@@ -8,22 +8,18 @@ var program = require('commander');
 
 /**
  * RunTask Module
- * @param  {String} './commands/run-task' Module path
- * @return {RunTask}                      Module class
  */
 var RunTask = require('./commands/run-task');
 
 /**
  * VarCrypto Module
- * @param  {String} './commands/var-crypto' Module path
- * @return {RunTask}                        Module class
  */
 var VarCrypto = require('./commands/var-crypto');
 
 /**
  * Lazy initilaizes `RunTask` module executes tasks or sequences
- * @param  {String} type Can be "task" or "sequence"
- * @param  {String} id   Id of task or sequence
+ * @param  {string} type Can be "task" or "sequence"
+ * @param  {string} id   Id of task or sequence
  */
 function runTaskType(type, id) {
   RunTask.init();
@@ -46,13 +42,17 @@ program
   });
 
 program
-  .command('decrypt')
+  .command('decrypt [password]')
   .description('Decrypt local ENV vars')
-  .action(VarCrypto.decrypt);
+  .action(function(password) {
+    VarCrypto.decrypt(password);
+  });
 
 program
-  .command('encrypt')
+  .command('encrypt [password]')
   .description('Encrypt local ENV vars')
-  .action(VarCrypto.encrypt);
+  .action(function(password) {
+    VarCrypto.encrypt(password);
+  });
 
 program.parse(process.argv);

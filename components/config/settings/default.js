@@ -1,9 +1,10 @@
 'use strict';
 
 var path = require('path');
+var findup = require('findup');
 var cfg = require('nconf').get();
 var projectRoot = process.cwd();
-var packageRoot = require('app-root-path').path;
+var packageRoot = findup.sync(__dirname, 'package.json');
 
 // Can be overidden
 var source = 'app';
@@ -34,9 +35,6 @@ module.exports = {
 
     // Project 'root'
     projectRoot: projectRoot,
-
-    // Project 'root'
-    root: projectRoot,
 
     // Build specific scripts and configurations
     build: build,

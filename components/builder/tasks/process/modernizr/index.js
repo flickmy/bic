@@ -15,7 +15,7 @@ module.exports = function(id, cfg) {
 
   var taskConfig = cfg.tasks[id];
 
-  var dest = path.join(cfg.dir.root, taskConfig.dest, taskConfig.filename);
+  var dest = path.join(cfg.dir.projectRoot, taskConfig.dest, taskConfig.filename);
 
   _.each(taskConfig.settings.excludeTests, function(excludeTest) {
     logger.info('Exclude test', excludeTest);

@@ -47,10 +47,10 @@ var BUNDLE = ['js', 'css']
   }, {});
 
 // Construct absolute paths (webpack likes absolute paths)
-var sourceDir = path.join(cfg.dir.root, cfg.dir.source);
-var destDir = path.join(cfg.dir.root, cfg.dir.dest);
-var nodeDir = path.join(cfg.dir.root, cfg.packages.node);
-var bowerDir = path.join(cfg.dir.root, cfg.packages.bower);
+var sourceDir = path.join(cfg.dir.projectRoot, cfg.dir.source);
+var destDir = path.join(cfg.dir.projectRoot, cfg.dir.dest);
+var nodeDir = path.join(cfg.dir.projectRoot, cfg.packages.node);
+var bowerDir = path.join(cfg.dir.projectRoot, cfg.packages.bower);
 
 // Asset paths
 var fontPath = path.join(cfg.dir.fonts, '[name].[ext]');
@@ -204,7 +204,7 @@ config.init = function() {
     return obj;
   }
 
-  pagesDir = path.join(cfg.dir.root, cfg.dir.pages);
+  pagesDir = path.join(cfg.dir.projectRoot, cfg.dir.pages);
 
   config.entry = glob.sync([cfg.patterns.js], {
       cwd: pagesDir

@@ -9,22 +9,26 @@ var filename = {
 
 var logger = require('@flickmy/bic-logger').get('var-crypto');
 
-function decrypt() {
+function decrypt(password) {
 
   cipher.decrypt({
     input: filename.ENCRYPTED,
-    output: filename.DECRYPTED
+    output: filename.DECRYPTED,
+    password: password,
+    key: password // Typo in node-cipher
   }, function() {
 
     logger.info(filename.ENCRYPTED, 'decrypted to', filename.DECRYPTED);
   });
 }
 
-function encrypt() {
+function encrypt(password) {
 
   cipher.encrypt({
     input: filename.DECRYPTED,
-    output: filename.ENCRYPTED
+    output: filename.ENCRYPTED,
+    password: password,
+    key: password // Typo in node-cipher
   }, function() {
 
     logger.info(filename.DECRYPTED, 'encrypted to', filename.ENCRYPTED);

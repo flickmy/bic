@@ -5,8 +5,6 @@ var nconf = require('nconf');
 var path = require('path');
 var projectRoot = process.cwd();
 
-// var projectRoot = require('app-root-path').path; // TODO: Remove if `process.cwd()` will do when published
-
 // Logger
 var logger = require('@flickmy/bic-logger').get('config');
 

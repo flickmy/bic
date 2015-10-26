@@ -8,7 +8,7 @@ module.exports = {
   src: [
     cfg.patterns.svg
   ],
-  dest: cfg.dir.root,
+  dest: cfg.dir.projectRoot,
   options: {
     shape: {
       id: {

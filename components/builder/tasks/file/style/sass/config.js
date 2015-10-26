@@ -8,7 +8,7 @@ module.exports = {
   src: [
     cfg.patterns.sass
   ],
-  configPath: path.join(cfg.dir.root, '.csscomb.json'),
+  configPath: path.join(cfg.dir.projectRoot, '.csscomb.json'),
   options: {},
   dest: cfg.dir.source // Since we cannot report, we repair
 };
