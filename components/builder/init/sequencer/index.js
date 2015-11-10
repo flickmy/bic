@@ -6,12 +6,11 @@ var fs = require('fs-extra');
 var path = require('path');
 var glob = require('globby');
 var traverse = require('traverse');
-var rek = require('rekuire');
 
 // Logger
 var logger = require('@flickmy/bic-logger').get('init/sequencer');
 
-var sequencer = rek('components/builder/utils/sequencer');
+var sequencer = require('../../utils/sequencer');
 
 function getDefaultDataObject(sequenceStringOrArray) {
 
@@ -77,7 +76,7 @@ function init() {
         path.basename(filePath, path.extname(filePath))
       );
 
-      var sequence = rek(path.join(cwd, id));
+      var sequence = require(path.join(cwd, id));
 
       cfg.sequences[id] = getDefaultDataObject(sequence);
     });

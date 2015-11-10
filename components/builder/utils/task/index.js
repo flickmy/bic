@@ -1,13 +1,12 @@
 'use strict';
 
-var nconf = require('nconf');
-var rek = require('rekuire');
+let nconf = require('nconf');
 
-var Logger = require('@flickmy/bic-logger');
+let Logger = require('@flickmy/bic-logger');
 
-var watcher = rek('components/builder/utils/watcher');
+let watcher = require('../watcher');
 
-var Task = function(activate) {
+let Task = function(activate) {
 
   return (id) => {
 
@@ -18,8 +17,8 @@ var Task = function(activate) {
     this.logger = Logger.get(this.id);
 
     // Tidy up configs
-    var globalConfig = nconf.get();
-    var localConfig = globalConfig.tasks[this.id];
+    let globalConfig = nconf.get();
+    let localConfig = globalConfig.tasks[this.id];
 
     this.config = {
       global: globalConfig,
@@ -33,11 +32,35 @@ var Task = function(activate) {
     // Say what's up
     this.logger.info('Initilaizing', this.id);
 
-    // Activate is a function that _should_ return the Gulp stream
-    var stream = activate.apply(this);
+    let src = this.config.local.gulp ? this.config.local.gulp.src : null;
 
-    // So we can do boring things with it
-    watcher(this.id, this.config.global, stream);
+    if (src) {
+
+      let options = this.config.local.gulp.options || {
+        cwd: this.config.global.dir.source
+      };
+
+      this.stream = this.gulp.src(src, options);
+
+      this.gulp.task(this.id, () => {
+        return this.stream;
+      });
+
+      // Activate is a function that _should_ return the Gulp stream
+      activate.apply(this);
+
+      // Send to destination
+      if (this.config.local.gulp.dest) {
+        this.stream.pipe(this.gulp.dest(this.config.local.gulp.dest));
+      }
+
+      // And then we can spy on it
+      watcher(this.id, this.config.global, this.stream);
+
+    } else {
+
+      this.gulp.task(this.id, activate.apply(this));
+    }
   };
 };
 

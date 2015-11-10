@@ -22,14 +22,14 @@ function addWatcher(id, cwd, src, stream) {
 
 module.exports = function(id, cfg, stream) {
 
-  var taskConfig = cfg.tasks[id];
+  let taskConfig = cfg.tasks[id];
 
   if (cfg.watch && taskConfig.watch && taskConfig.isWatching !== true) {
 
     taskConfig.isWatching = true;
 
-    var cwd = taskConfig.watch.cwd || taskConfig.cwd;
-    var src = taskConfig.watch.src || taskConfig.src;
+    let cwd = taskConfig.watch.cwd || taskConfig.cwd;
+    let src = taskConfig.watch.src || taskConfig.src;
 
     (_.isArray(cwd) ? cwd : [cwd]).map(function(dir) {
 

@@ -4,11 +4,13 @@ var path = require('path');
 var cfg = require('nconf').get();
 
 module.exports = {
-  cwd: cfg.dir.dest,
-  src: [
-    cfg.patterns.css,
-    cfg.patterns.ignore(path.join('**', cfg.dir.vendor, '**'))
-  ],
+  gulp: {
+    cwd: cfg.dir.dest,
+    src: [
+      cfg.patterns.css,
+      cfg.patterns.ignore(path.join('**', cfg.dir.vendor, '**'))
+    ]
+  },
   options: {
 
     // Be verbose and log files that have no collisions.
@@ -30,6 +32,5 @@ module.exports = {
     //     '#010101'
     //   ]
     // ]
-  },
-  dest: cfg.dir.dest
+  }
 };

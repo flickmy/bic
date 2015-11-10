@@ -15,28 +15,28 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "contributors": [{
-    "name": "Ray Patterson",
-    "email": "github.raypatterson@gmail.com"
-  }],
+  "contributors": [
+    {
+      "name": "Ray Patterson",
+      "email": "github.raypatterson@gmail.com"
+    }
+  ],
   "dependencies": {
-    "@flickmy/bic-logger": "file:../bic-logger",
-    "app-root-path": "^1.0.0",
     "autoprefixer-loader": "^3.1.0",
     "bower-webpack-plugin": "^0.1.8",
     "browser-sync": "^2.8.0",
     "commander": "^2.8.1",
     "concurrent-transform": "^1.0.0",
-    "css-loader": "^0.18.0",
+    "css-loader": "^0.22.0",
     "csso": "^1.3.11",
     "del": "^2.0.1",
     "dotenv": "^1.2.0",
     "executive": "^0.5.0",
-    "extract-text-webpack-plugin": "^0.8.2",
+    "extract-text-webpack-plugin": "^0.9.1",
     "favicons": "^3.1.3",
     "file-loader": "^0.8.4",
     "findup": "^0.1.5",
-    "fs-extra": "^0.24.0",
+    "fs-extra": "^0.26.2",
     "globby": "^3.0.1",
     "gulp": "^3.9.0",
     "gulp-awspublish": "^3.0.0",
@@ -52,10 +52,10 @@
     "gulp-gzip": "^1.2.0",
     "gulp-htmlhint": "^0.3.0",
     "gulp-htmlmin": "^1.1.3",
-    "gulp-ignore": "^1.2.1",
+    "gulp-ignore": "^2.0.1",
     "gulp-imagemin": "^2.4.0",
     "gulp-invalidate-cloudfront": "^0.1.2",
-    "gulp-jscs": "^2.0.0",
+    "gulp-jscs": "^3.0.2",
     "gulp-jscs-custom": "^0.1.6",
     "gulp-jshint": "^1.12.0",
     "gulp-json-lint": "^0.1.0",
@@ -73,45 +73,44 @@
     "gulp-sequence": "^0.4.0",
     "gulp-svg-sprite": "^1.2.6",
     "gulp-tap": "^0.1.3",
-    "gulp-todo": "^3.1.1",
+    "gulp-todo": "^4.0.0",
     "gulp-uglify": "^1.2.0",
     "gulp-uncss": "^1.0.2",
     "gulp-util": "^3.0.6",
-    "html-minifier": "^0.7.2",
+    "html-minifier": "^1.0.0",
     "html-webpack-plugin": "^1.6.0",
     "jade": "^1.11.0",
     "jscs-stylish": "^0.3.1",
     "jshint-stylish": "^2.0.1",
     "lodash": "^3.10.0",
     "modernizr": "^3.2.0",
-    "nconf": "^0.7.1",
+    "nconf": "^0.8.2",
     "node-cipher": "^2.4.8",
     "node-sass": "^3.4.1",
     "nodemon": "^1.3.8",
     "rekuire": "^0.1.9",
-    "s3": "^4.4.0",
-    "sass-loader": "^2.0.1",
-    "style-loader": "^0.12.3",
+    "sass-loader": "^3.1.1",
+    "style-loader": "^0.13.0",
     "traverse": "^0.6.6",
     "uglify-js": "^2.4.24",
     "url-loader": "^0.5.6",
-    "vinyl": "^0.5.0",
-    "webpack": "^1.10.5",
-    "yargs": "^3.15.0"
+    "vinyl": "^1.1.0",
+    "webpack": "^1.10.5"
   },
   "devDependencies": {
     "blue-tape": "^0.1.10",
     "bump-cli": "^1.1.3",
     "cz-conventional-changelog": "^1.1.4",
     "faucet": "0.0.1",
-    "fixpack": "^2.2.0"
+    "fixpack": "^2.2.0",
+    "npm-link-shared": "^0.2.0"
   },
   "directories": {},
   "engines": {
-    "node": "4.1.x",
-    "npm": "2.14.x"
+    "node": "5.0.x",
+    "npm": "3.3.x"
   },
-  "homepage": "https://github.com/nuruncode/bic#readme",
+  "homepage": "https://github.com/flickmy/bic#readme",
   "keywords": [
     "bic",
     "website",
@@ -119,13 +118,17 @@
   ],
   "license": "MIT",
   "main": "index.js",
-  "maintainers": [{
-    "name": "raypatterson",
-    "email": "github.raypatterson@gmail.com"
-  }],
+  "maintainers": [
+    {
+      "name": "raypatterson",
+      "email": "github.raypatterson@gmail.com"
+    }
+  ],
   "repository": "github:flickmy/bic",
   "scripts": {
     "commit:pre": "git add -A && git commit -m 'Prerelease' && git push",
+    "link": "npm-link-shared .. . bic-logger",
+    "postinstall": "npm run link",
     "publish:pre": "npm publish --access=public",
     "release:major": "fixpack && bump .package.json --major",
     "release:minor": "fixpack && bump .package.json --minor",
