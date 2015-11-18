@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = [
-  'tasks/file-clean',
-  'tasks/file-copy'
-  // ,
-  // 'tasks/process/webpack',
-  // 'tasks/process/modernizr'
+  'tasks/build-clean',
+  'tasks/build-copy',
+  'tasks/build-svg',
+  'tasks/build-webpack',
+  'tasks/build-modernizr'
 ];

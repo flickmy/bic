@@ -50,7 +50,7 @@ let Task = function(activate) {
         this.config.local.gulp.dest : this.config.local.dest;
 
       // Gulp task
-      let gulp = this.gulp.task(this.id, () => {
+      this.task = this.gulp.task(this.id, () => {
 
         this.logger.info('Starting', this.id);
 
@@ -79,17 +79,22 @@ let Task = function(activate) {
       });
 
       // Gulp watch
-      watcher(this.id, this.config, gulp);
+      watcher(this.id, this.config, this.task);
 
     } else {
 
       // Assuming Gulp wrapper requires a callback
 
-      this.gulp.task(this.id, (cb) => {
+      this.task = this.gulp.task(this.id, (cb) => {
 
         this.logger.info('Starting', this.id);
 
-        activate.call(this)(cb);
+        activate.call(this)(() => {
+
+          this.logger.info('Finished', this.id);
+
+          cb();
+        });
       });
     }
   };

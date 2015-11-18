@@ -8,5 +8,6 @@ module.exports = [
   'tasks/package-css',
   'tasks/package-js',
   'tasks/package-rev',
+  'tasks/package-paths',
   'tasks/package-gzip'
 ];

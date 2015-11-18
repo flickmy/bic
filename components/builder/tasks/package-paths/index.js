@@ -1,12 +1,16 @@
 'use strict';
 
-var path = require('path');
+let path = require('path');
 
-var SPLIT = ', ';
+let Task = require('../../utils/task');
 
-module.exports = function(id, cfg) {
+const SPLIT = ', ';
 
-  var logger = require('@flickmy/bic-logger').get(id);
+module.exports = new Task(function() {
+
+  let logger = this.logger;
+
+  let prependPath = '';
 
   function addTrailingSlash(filePath) {
 
@@ -83,34 +87,24 @@ module.exports = function(id, cfg) {
     return match;
   }
 
-  cfg.gulp.task(id, function() {
+  return this.stream
+    .pipe(this.$.tap((file) => {
 
-    var taskConfig = cfg.tasks[id];
+      prependPath = path.relative(path.dirname(file.path), this.config.global.dir.dest);
 
-    var prependPath = '';
+      if (prependPath === '') {
+        prependPath = '.';
+      }
 
-    return cfg.gulp.src(taskConfig.src, {
-        cwd: taskConfig.cwd
-      })
-      .pipe(cfg.$.tap(function(file) {
+      // logger.debug('Prepending', prependPath);
 
-        prependPath = path.relative(path.dirname(file.path), cfg.dir.dest);
+    }))
+    .pipe(this.$.replace(/url\((.*?)\)/g, (match, capture) => {
 
-        if (prependPath === '') {
-          prependPath = '.';
-        }
+      return getRelativePath(match, capture, prependPath);
+    }))
+    .pipe(this.$.replace(/="(.*?)"/g, (match, capture) => {
 
-        // logger.debug('Prepending', prependPath);
-
-      }))
-      .pipe(cfg.$.replace(/url\((.*?)\)/g, function(match, capture) {
-
-        return getRelativePath(match, capture, prependPath);
-      }))
-      .pipe(cfg.$.replace(/="(.*?)"/g, function(match, capture) {
-
-        return getRelativePath(match, capture, prependPath);
-      }))
-      .pipe(cfg.gulp.dest(taskConfig.dest));
-  });
-};
+      return getRelativePath(match, capture, prependPath);
+    }));
+});

@@ -6,11 +6,6 @@ var cfg = require('nconf').get();
 var cwd = path.join(cfg.dir.inputs, 'favicons');
 
 module.exports = {
-  // watch: true,
-  cwd: cwd,
-  src: [
-    cfg.patterns.images
-  ],
   options: {
     files: {
       // Path(s) for file to produce the favicons. `string` or `object`

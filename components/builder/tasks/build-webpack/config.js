@@ -109,15 +109,13 @@ config.plugins.push(new ExtractTextPlugin(path.join('[name]', BUNDLE.css), {
   allChunks: true
 }));
 
-
-// Add loaders
-
 // SASS include paths
 var includePaths = resolvePathList.reduce(function addSassIncludePath(paths, path) {
   paths.push('&includePaths[]=' + path);
   return paths;
 }, []).join('');
 
+// Add loaders
 config.module.loaders.push({
   test: /\.scss$/,
   loader: ExtractTextPlugin.extract(

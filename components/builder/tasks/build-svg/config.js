@@ -4,11 +4,15 @@ var path = require('path');
 var cfg = require('nconf').get();
 
 module.exports = {
-  cwd: cfg.dir.inputs,
-  src: [
-    cfg.patterns.svg
-  ],
-  dest: cfg.dir.projectRoot,
+  gulp: {
+    options: {
+      cwd: cfg.dir.inputs
+    },
+    src: [
+      cfg.patterns.svg
+    ],
+    dest: cfg.dir.projectRoot
+  },
   options: {
     shape: {
       id: {

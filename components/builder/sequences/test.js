@@ -5,5 +5,6 @@ module.exports = [
   'sequences/lint',
   'sequences/style',
   'sequences/report',
-  'sequences/package'
+  'sequences/package',
+  'sequences/serve'
 ];

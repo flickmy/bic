@@ -8,17 +8,9 @@ module.exports = {
       cwd: cfg.dir.dest
     },
     src: [
-      cfg.patterns.fonts,
-      cfg.patterns.json,
-      cfg.patterns.html,
       cfg.patterns.css,
-      cfg.patterns.js
+      cfg.patterns.html
     ],
     dest: cfg.dir.dest
-  },
-  options: {
-    threshold: 1024,
-    extension: 'gz',
-    append: true
   }
 };
