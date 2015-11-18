@@ -13,7 +13,7 @@ module.exports = function(id, cfg) {
     // FIXME: Something is mutating the parallel task string values into object literals... Maybe the sequence task?
     var sequenceConfig = _.cloneDeep(cfg.sequences[id]);
 
-    logger.debug('Executing Sequence', sequenceConfig.sequence);
+    logger.debug('Executing Sequence', id, sequenceConfig.sequence);
 
     // TODO: Might be beneficial to have a `sequenceConfig.bootstrap(id, cfg) { ... }` to set some pre-sequence params
 

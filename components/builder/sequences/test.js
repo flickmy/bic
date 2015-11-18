@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = [
-  [
-    'tasks/file-clean',
-    'sequences/lint',
-    'sequences/style'
-  ]
+  'sequences/build',
+  'sequences/lint',
+  'sequences/style',
+  'sequences/report',
+  'sequences/package'
 ];

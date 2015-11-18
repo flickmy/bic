@@ -9,9 +9,10 @@ module.exports = {
     },
     src: [
       cfg.patterns.html
-    ]
+    ],
+    dest: cfg.dir.dest
   },
   options: {
-    htmlhintrc: '.htmlhintrc'
+    collapseWhitespace: true
   }
 };

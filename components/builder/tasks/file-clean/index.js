@@ -6,7 +6,7 @@ let Task = require('../../utils/task');
 
 module.exports = new Task(function() {
 
-  let src = this.config.local.src;
+  let src = this.config.local.options.src;
 
   return (cb) => {
 

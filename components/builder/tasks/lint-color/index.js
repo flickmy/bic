@@ -17,7 +17,9 @@ module.exports = new Task(function() {
         '    Stopping process',
         '    Check logs for more information',
         '******************************************************'
-      ].map(this.logger.error);
+      ].map((line) => {
+        this.logger.error(line);
+      });
 
       process.exit(1);
     });

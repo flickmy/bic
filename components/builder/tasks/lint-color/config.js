@@ -5,7 +5,9 @@ var cfg = require('nconf').get();
 
 module.exports = {
   gulp: {
-    cwd: cfg.dir.dest,
+    options: {
+      cwd: cfg.dir.dest
+    },
     src: [
       cfg.patterns.css,
       cfg.patterns.ignore(path.join('**', cfg.dir.vendor, '**'))

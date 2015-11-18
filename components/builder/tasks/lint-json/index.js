@@ -7,7 +7,9 @@ module.exports = new Task(function() {
   return this.stream
     .pipe(this.$.jsonLint(this.config.local.options))
     .pipe(this.$.jsonLint.report((lint, file) => {
+
       if (!file.success) {
+
         [
           '******************************************************',
           '      Error : ' + lint.error,
@@ -17,7 +19,9 @@ module.exports = new Task(function() {
           '    Stopping process',
           '    Check logs for more information',
           '******************************************************'
-        ].map(this.logger.error);
+        ].map((line) => {
+          this.logger.error(line);
+        });
 
         process.exit(1);
       }

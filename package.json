@@ -72,7 +72,6 @@
     "gulp-notify": "2.2.0",
     "gulp-pipemin": "2.2.4",
     "gulp-plumber": "1.0.1",
-    "gulp-rename": "1.2.2",
     "gulp-replace": "0.5.4",
     "gulp-rev-all": "0.8.22",
     "gulp-rev-napkin": "0.1.0",

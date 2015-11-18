@@ -1,12 +1,12 @@
 'use strict';
 
-var _ = require('lodash');
+let _ = require('lodash');
 
-function addWatcher(id, cwd, src, stream) {
+function addWatcher(id, cwd, src, gulp) {
 
-  var logger = require('@flickmy/bic-logger').get(id);
+  let logger = require('@flickmy/bic-logger').get(id);
 
-  stream.watch(src, {
+  gulp.watch(src, {
       cwd: cwd
     }, [id])
     .on('ready', function() {
@@ -20,20 +20,18 @@ function addWatcher(id, cwd, src, stream) {
     });
 }
 
-module.exports = function(id, cfg, stream) {
+module.exports = function(id, cfg, gulp) {
 
-  let taskConfig = cfg.tasks[id];
+  if (cfg.global.watch && cfg.local.watch && cfg.local.isWatching !== true) {
 
-  if (cfg.watch && taskConfig.watch && taskConfig.isWatching !== true) {
+    cfg.local.isWatching = true;
 
-    taskConfig.isWatching = true;
-
-    let cwd = taskConfig.watch.cwd || taskConfig.cwd;
-    let src = taskConfig.watch.src || taskConfig.src;
+    let cwd = cfg.local.watch.cwd || cfg.local.gulp.cwd;
+    let src = cfg.local.watch.src || cfg.local.gulp.src;
 
     (_.isArray(cwd) ? cwd : [cwd]).map(function(dir) {
 
-      addWatcher(id, dir, src, stream);
+      addWatcher(id, dir, src, gulp);
 
     });
   }

@@ -9,13 +9,16 @@ module.exports = new Task(function() {
     .pipe(this.$.jshint.reporter(this.config.local.reporter))
     .pipe(this.$.jshint.reporter('fail'))
     .on('error', (error) => {
+
       [
         '******************************************************',
         '  ' + error.message,
         '    Stopping process',
         '    Check logs for more information',
         '******************************************************'
-      ].map(this.logger.error);
+      ].map((line) => {
+        this.logger.error(line);
+      });
 
       process.exit(1);
     });

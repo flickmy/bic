@@ -9,9 +9,7 @@ module.exports = {
     },
     src: [
       cfg.patterns.html
-    ]
-  },
-  options: {
-    htmlhintrc: '.htmlhintrc'
+    ],
+    dest: cfg.dir.dest
   }
 };

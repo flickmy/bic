@@ -8,10 +8,9 @@ module.exports = {
       cwd: cfg.dir.dest
     },
     src: [
-      cfg.patterns.html
-    ]
+      cfg.patterns.js
+    ],
+    dest: cfg.dir.dest
   },
-  options: {
-    htmlhintrc: '.htmlhintrc'
-  }
+  options: {}
 };

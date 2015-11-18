@@ -1,8 +1,6 @@
 'use strict';
 
 module.exports = [
-  [
-    'tasks/style-js',
-    'tasks/style-sass'
-  ]
+  'tasks/style-js',
+  'tasks/style-sass'
 ];

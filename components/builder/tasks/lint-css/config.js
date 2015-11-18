@@ -7,7 +7,9 @@ var csslintrc = fs.readJsonSync('.csslintrc');
 
 module.exports = {
   gulp: {
-    cwd: cfg.dir.dest,
+    options: {
+      cwd: cfg.dir.dest
+    },
     src: [
       cfg.patterns.css,
       cfg.patterns.ignore('**', cfg.dir.vendor, '**')
