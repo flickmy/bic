@@ -111,7 +111,7 @@
   },
   "directories": {},
   "engines": {
-    "node": "5.0.x",
+    "node": "5.1.x",
     "npm": "3.3.x"
   },
   "homepage": "https://github.com/flickmy/bic#readme",

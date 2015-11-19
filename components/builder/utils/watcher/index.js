@@ -9,18 +9,18 @@ function addWatcher(id, cwd, src, gulp) {
   gulp.watch(src, {
       cwd: cwd
     }, [id])
-    .on('ready', function() {
+    .on('ready', () => {
 
       logger.info('Watching', src, 'in directory', '\'' + cwd + '\'');
     })
-    .on('change', function(event) {
+    .on('change', (event) => {
 
       logger.info('File', event.path, 'was', event.type);
       logger.info('Running', id);
     });
 }
 
-module.exports = function(id, cfg, gulp) {
+module.exports = (id, cfg, gulp) => {
 
   if (cfg.global.watch && cfg.local.watch && cfg.local.isWatching !== true) {
 
@@ -29,7 +29,7 @@ module.exports = function(id, cfg, gulp) {
     let cwd = cfg.local.watch.cwd || cfg.local.gulp.cwd;
     let src = cfg.local.watch.src || cfg.local.gulp.src;
 
-    (_.isArray(cwd) ? cwd : [cwd]).map(function(dir) {
+    (_.isArray(cwd) ? cwd : [cwd]).map((dir) => {
 
       addWatcher(id, dir, src, gulp);
 

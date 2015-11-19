@@ -11,7 +11,7 @@ module.exports = new Task(function() {
 
   let reload = _.debounce(() => {
 
-    this.logger.info('Reloading', files);
+    // this.logger.debug('Reloading', files);
 
     bs.reload(files.splice(0));
 
@@ -34,22 +34,25 @@ module.exports = new Task(function() {
       ]
     });
 
+    /**
+     * TODO: Add callbacks to watch and remove this custom watch
+     */
     this.task.watch(this.config.local.watch.src, {
         cwd: this.config.local.watch.cwd
       })
       .on('ready', () => {
 
         this.logger.info('Watching', this.config.local.watch.src, 'in directory', '\'' + this.config.local.watch.cwd + '\'');
-
-        cb();
       })
       .on('change', (event) => {
 
-        this.logger.info('File', event.path, 'was', event.type);
+        // this.logger.info('File', event.path, 'was', event.type);
 
         files.push(event.path);
 
         reload();
       });
+
+    cb();
   };
 });
