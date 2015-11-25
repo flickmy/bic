@@ -21,9 +21,6 @@
   "browser": true,
   "esnext": true,
   "globals": {
-    "DEBUG": false,
-    "Modernizr": false,
-    "jQuery": true,
-    "$": true
+    "DEBUG": false
   }
 }

@@ -10,45 +10,49 @@
 
 ## Supported features are
 
-- CLI, env & project specific defaults and overrides config using [nconf](https://github.com/indexzero/nconf)
-- Build task sequencing using [gulp](https://github.com/gulpjs) & [gulp-sequence](https://github.com/teambition/gulp-sequence)
+- Config management using [Nconf](https://github.com/indexzero/nconf)
+- Build task control flow using [Gulp](https://github.com/gulpjs) & [Gulp Sequence](https://github.com/teambition/gulp-sequence)
 - [LiveReload](http://www.browsersync.io/docs/gulp/#gulp-reload) + [BrowserSync](http://www.browsersync.io/) & [Express](http://expressjs.com/) + [Nodemon](http://nodemon.io/) server
 - JS & CSS code splitting for multiple entry points/pages using [webpack](https://github.com/webpack/webpack)
-- Custom Modernizr using  [customizr](https://github.com/doctyper/customizr)
-- Dead CSS removal using [uncss](https://github.com/giakki/uncss)
+- Custom Modernizr using [Customizr](https://github.com/doctyper/customizr)
+- Unused CSS removal using [Purify CSS](https://github.com/purifycss/purifycss)
 - Image optimization
 - SVG sprite generation
 - HTML, CSS, JS & JSON minification
 - HTML, CSS, JS, JSON & Color linting
 - JS & SASS style validation & formatting
-- Inlined files
 - Gzip compression
 - Favicon generation
 - Deployment to AWS S3 + CloudFront
 - Asset filename versioning (for browser cache busting)
 - Convert root relative paths to relative for deployment to sub-directories
-- Document project TODO/FIXME list
 
 ## Supported demo features are
 
-- Package formatting using [fixpack](https://github.com/henrikjoreteg/fixpack)
-- Package versioning using [bump-cli](https://github.com/rstacruz/bump-cli)
-- Async unit testing using [blue-tape](https://github.com/spion/blue-tape)
+- Project boilerplate generator using [Yeoman](http://yeoman.io) & [Slush](https://github.com/slushjs/slush)
+- Package formatting using [Fixpack](https://github.com/henrikjoreteg/fixpack)
+- Package versioning using [Bump CLI](https://github.com/rstacruz/bump-cli)
+- Async unit testing using [Blue Tape](https://github.com/spion/blue-tape)
+- Local module development support using [Symlink](https://github.com/clux/symlink)
+- Git commits using [Commitizen](https://github.com/commitizen)
+- Git hooks using [Ghooks](https://github.com/gtramontina/ghooks)
+- Generate TODO & FIXME list
+- Generate README & LICENSE docs
 
 ## Future supported features may be
 
-- Project boilerplate generators Yeoman & Slush
-- Deep add & override configs (E.g. add loaders to webpack)
-- JS & CSS documentation generation
-- Sitespeed performance budget reports
-- JS & CSS complexity reports
-- Accessibility report
-- Visual regression testing using Ghost Inspector  
-- Unit testing using Jasmine / Mocha, Chai & Sinon
-- Test running with webpack support using Karma
-- Test coverage reporting using Istambul
-- Release management using [ghooks](https://github.com/gtramontina/ghooks), [semantic-release](https://github.com/semantic-release/semantic-release), [commitizen](https://github.com/commitizen), [greenkeeper](http://greenkeeper.io/), etc.
-- IE8+ support, CSS Bless
+- Config add & override using [Lodash](https://lodash.com/)
+- Unit testing and coverage reporting using [Lab](https://github.com/hapijs/lab)
+- JS & CSS documentation generation using [DocumentJS](http://documentjs.com/)
+- Performance budget reports using [Sitespeed](https://www.sitespeed.io/) & (Juve)[https://github.com/jared-stilwell/juve]
+- Release management using [Semantic Release](https://github.com/semantic-release/semantic-release) & [Greenkeeper](http://greenkeeper.io/)
+- JS reports using [JS Inspect](https://github.com/danielstjules/jsinspect) & [Plato](https://github.com/es-analysis/plato)
+- CSS reports using [Parker](https://github.com/katiefenn/parker) & [Analyze CSS](https://github.com/macbre/analyze-css)
+- Visual regression testing using [Ghost Inspector](https://ghostinspector.com/)
+- Accessibility report using [AccessSniff](https://github.com/yargalot/AccessSniff)
+- Control flow using [Vo](https://github.com/lapwinglabs/vo)
+- Config management using [Confidence](https://github.com/hapijs/confidence)
+- CLI using [Vorpal](https://github.com/dthree/vorpal)
 
 
 ## Things that won't happen are

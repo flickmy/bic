@@ -6,7 +6,9 @@ var path = require('path');
 var projectRoot = process.cwd();
 
 // Logger
-var logger = require('@bicjs/bic-logger').get('config');
+var Logger = require('@bicjs/bic-logger');
+
+var logger = Logger.get('config');
 
 // Export for reference
 module.exports = {
@@ -23,6 +25,11 @@ module.exports = {
       .use('memory')
       .argv()
       .env();
+
+    // Set log level
+    let logLevel = nconf.get('debug') === true ? Logger.Levels.DEBUG : Logger.Levels.ERROR;
+
+    Logger.setLevel(logLevel);
 
     // Protected config data - *Cannot* be overridden
     nconf.overrides(require('./settings/protected'));

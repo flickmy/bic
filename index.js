@@ -1,7 +1,7 @@
 'use strict';
 
-var config = require('./src/config');
-var builder = require('./src/builder');
+let config = require('./src/config');
+let builder = require('./src/builder');
 
 module.exports = {
 

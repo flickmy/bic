@@ -23,31 +23,40 @@ function runTaskType(type, id) {
 }
 
 program
-  .command('sequence [id]')
-  .description('Run a sequence of tasks')
-  .option('-r, --release', 'Package for release')
-  .action(function(id) {
+  .version('0.0.1')
+  .usage('<command> [options]')
+  .option('-d, --debug', 'Enable debugging mode')
+  .option('-r, --release', 'Package for release');
+
+program
+  .command('sequence')
+  .alias('s')
+  .description('Run sequence of tasks')
+  .arguments('<id>')
+  .action((id) => {
     runTaskType('sequences', id);
   });
 
 program
-  .command('task [id]')
-  .description('Run an individual task')
-  .action(function(id) {
+  .command('task')
+  .alias('t')
+  .description('Run individual task')
+  .arguments('<id>')
+  .action((id) => {
     runTaskType('tasks', id);
   });
 
 program
-  .command('decrypt [password]')
+  .command('decrypt <password>')
   .description('Decrypt local ENV vars')
-  .action(function(password) {
+  .action((password) => {
     VarCrypto.decrypt(password);
   });
 
 program
-  .command('encrypt [password]')
+  .command('encrypt <password>')
   .description('Encrypt local ENV vars')
-  .action(function(password) {
+  .action((password) => {
     VarCrypto.encrypt(password);
   });
 
