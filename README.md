@@ -44,7 +44,7 @@
 - Config add & override using [Lodash](https://lodash.com/)
 - Unit testing and coverage reporting using [Lab](https://github.com/hapijs/lab)
 - JS & CSS documentation generation using [DocumentJS](http://documentjs.com/)
-- Performance budget reports using [Sitespeed](https://www.sitespeed.io/) & (Juve)[https://github.com/jared-stilwell/juve]
+- Performance budget reports using [Sitespeed](https://www.sitespeed.io/) & [Juve](https://github.com/jared-stilwell/juve)
 - Release management using [Semantic Release](https://github.com/semantic-release/semantic-release) & [Greenkeeper](http://greenkeeper.io/)
 - JS reports using [JS Inspect](https://github.com/danielstjules/jsinspect) & [Plato](https://github.com/es-analysis/plato)
 - CSS reports using [Parker](https://github.com/katiefenn/parker) & [Analyze CSS](https://github.com/macbre/analyze-css)
